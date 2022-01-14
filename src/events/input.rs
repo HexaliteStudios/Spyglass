@@ -1,15 +1,15 @@
+use crate::core_plugins::*;
 use bevy::input::ElementState;
-use crate::core_plugins::input::*;
 
+#[derive(strum_macros::Display)]
 pub enum InputKind {
     Controller,
-    Keyboard
+    Keyboard,
 }
-
 pub struct InputEvent {
     pub binding: ActionBindingKind,
     pub state: ElementState,
-    pub kind: InputKind
+    pub kind: InputKind,
 }
 
 impl InputEvent {
@@ -17,7 +17,7 @@ impl InputEvent {
         InputEvent {
             binding,
             state,
-            kind
+            kind,
         }
     }
 }

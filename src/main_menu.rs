@@ -1,7 +1,5 @@
 use bevy::prelude::*;
-use crate::assets::*;
-use crate::resources::*;
-use crate::state::GameState;
+use crate::prelude::*;
 
 pub struct MainMenuPlugin;
 
@@ -9,11 +7,8 @@ pub struct MainMenuPlugin;
 // This menu is only drawn when the game is in the `GameState::MainMenu` state.
 
 impl Plugin for MainMenuPlugin {
-    fn build(&self, app: &mut AppBuilder) {
-       app.add_system_set(SystemSet::on_enter(GameState::MainMenu).with_system(menu.system()));
-    }
-    fn name(&self) -> &str {
-        "MainMenuPlugin"
+    fn build(&self, app: &mut App) {
+        app.add_system_set(SystemSet::on_enter(GameState::MainMenu).with_system(menu));
     }
 }
 
