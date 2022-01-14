@@ -1,0 +1,4 @@
+[video]
+fullscreen = true
+width = -1 # -1 means current screen resolution
+height = -1 # -1 means current screen resolution
